@@ -1,0 +1,129 @@
+%  article.tex (Version 3.3, released 19 January 2008)
+%  Article to demonstrate format for SPIE Proceedings
+%  Special instructions are included in this file after the
+%  symbol %>>>>
+%  Numerous commands are commented out, but included to show how
+%  to effect various options, e.g., to print page numbers, etc.
+%  This LaTeX source file is composed for LaTeX2e.
+
+%  The following commands have been added in the SPIE class
+%  file (spie.cls) and will not be understood in other classes:
+%  \supit{}, \authorinfo{}, \skiplinehalf, \keywords{}
+%  The bibliography style file is called spiebib.bst,
+%  which replaces the standard style unstr.bst.
+\RequirePackage{snapshot}
+\newcommand{\argmin}[1]{\underset{#1}{\operatorname{arg}\,\operatorname{min}}\;}
+
+\documentclass[12pt]{spieman}
+%%\documentclass[letter]{spie}  %>>> use for US letter paper
+%%\documentclass[a4paper]{spie}  %>>> use this instead for A4 paper
+%%\documentclass[nocompress]{spie}  %>>> to avoid compression of citations
+%% \addtolength{\voffset}{9mm}   %>>> moves text field down
+%\renewcommand{\baselinestretch}{1.65}   %>>> 1.65 for double spacing, 1.25 for 1.5 spacing
+
+
+\makeatletter
+\@fpsep\textheight
+\makeatother
+
+
+%% Latex documents that need direct input
+\title{Non Destructive Testing based on a Scanning-From-Heating approach: Application to non-through defect detection and fiber orientation assessment}
+
+\author[a]{Belkacemi M.}
+\author[a]{Stolz C.}
+\author[b]{Mathieu A.}
+\author[a,c]{Lemaitre G.}
+\author[a]{Massich J.}
+\author[a]{Aubreton O.}
+\affil[a]{LE2I UMR6306, CNRS, Arts et M\'etiers, Univ. Bourgogne Franche-Comt\'e, 12 rue de la Fonderie, Le Creusot, France, 71200}
+\affil[b]{ICB, UMR 6303 CNRS-Universit\'e Bourgogne Franche-Comt\'e, 12 rue de la Fonderie, Le Creusot, France, 71200}
+\affil[c]{ViCOROB, Universitat de Girona, Campus Montilivi, Edifici P4, Girona, Spain, 17071}
+
+
+
+
+\input{package.tex}        % contains the latex packages
+%\input{content/frontmatter.tex}             % contains the Title and Autor info
+%\input{latex/filesystem/fileSetup.tex}      % contains package and variables init.
+\input{acronym_definition.tex}      % contains the acronims
+
+%% Select inputing only one part of the document
+%\includeonly{content/intro/intro}   % the file wihtout .tex
+%\includeonly{content/other/other_content}
+
+% \addbibresource{./content/lit_review.bib}
+% \addbibresource{./content/biblatex-examples.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\acresetall  % reset the acronyms from the title (if any)
+Nowadays, industries ensure the quality of their manufactured products through computer vision techniques and non-conventional imaging. 3D scanners and \ac{ndt} systems are commonly used independently for such applications. Furthermore, these approaches combined together constitute a hybrid systems providing a 3D reconstruction and \ac{ndt} analysis. These systems, however, suffer from drawback such as errors during the data fusion and higher cost for manufacturers. In an attempt to solve those problems, a single active thermography system based on \ac{sfh} is proposed in this paper. Besides 3D digitization of the object, our contributions are twofold: (i) the non-through defect detection for homogeneous metallic object and (ii) fiber orientation assessment for long fiber composite material. The experiments on steel and aluminum plates show that our method achieves to detect non-through defects. Additionally, the estimation of the fiber orientation is evaluated on carbon-fiber composite material.
+\end{abstract}
+
+\keywords{Non Destructive Testing, Active Thermography, 3D scanning, Fiber orientation, Non-through defect detection}
+
+
+%>>>> Include contact information for corresponding author
+{\noindent \footnotesize\textbf{*} Mohamed Belkacemi, \linkable{Mohamed.Belkacemi@u-bourgogne.fr} }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{spacing}{2}   % use double spacing for rest of manuscript
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Incldue the content without .tex extension
+\acresetall  % reset the acronyms from the abstract
+\include*{content/intro/intro}          % the file wihtout .tex
+\include*{content/rel/rel}
+\include*{content/simu/simu}
+\include*{content/exp/exp}
+\include*{content/conc/conc}
+% \include*{content/other/other}
+
+\acknowledgments     %>>>> equivalent to \section*{ACKNOWLEDGMENTS}
+
+This work is supported by the Regional Council of Burgundy. We are extremely grateful to members of laboratory LE2I for day to day help and collaboration.
+
+
+\newpage
+\bibliography{./Bibliography}   %>>>> bibliography data in report.bib
+\bibliographystyle{spiejour}   %>>>> makes bibtex use spiebib.bst
+
+
+\newpage
+\input{./content/biography/biography.tex} 
+
+\newpage
+\listoffigures
+
+\newpage
+\listoftables
+
+\newpage \input{Figure/Figure6/Fig6.tex}  
+
+\newpage \input{Figure/Figure7/Fig7.tex}  
+
+\newpage \input{Figure/Figure8/Fig8.tex}  
+
+\newpage \input{Figure/Figure9/Fig9.tex}  
+
+\newpage \input{Figure/Figure10/Fig10.tex} 
+
+\newpage \input{Figure/Figure11/Fig11.tex}  
+
+\newpage \input{Figure/Figure12/Fig12.tex}  
+
+
+\end{spacing}
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

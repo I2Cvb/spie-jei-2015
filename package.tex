@@ -1,0 +1,56 @@
+%  The following command loads a graphics package to include images
+%  in the document. It may be necessary to specify a DVI driver option,
+%  e.g., [dvips], but that may be inappropriate for some LaTeX
+%  installations.
+\usepackage{subfigure}
+\usepackage[]{graphicx}
+
+% In order to include files without having a clear page using \include*,
+% the newclude package is required
+\usepackage{newclude}
+
+% Required for acronyms
+% use \acresetall to reset the acroyms counter
+% macros=True, allows for calling \myTriger rather than \ac{myTriger}
+\usepackage[single=true, macros=true, xspace=true]{acro}
+
+% In SPIE template, biblatex can NOT be used to manage the referencing
+%
+%\usepackage[style=spiebib, backend=biber]{biblatex}
+
+% Clever cross referencing. Using cleverref, instead of writting
+% figure~\ref{...} or equation~\ref{...}, only \cref{...} is required.
+% The package interprates the references and introduces the figure, fig.,
+% equation, eq., etc keywords. \Cref forces first letter capital.
+% >> WARNING: This package needs to be loaded after hyperref, math packages,
+%             etc. if used.
+%             Cleveref is recomended to load late
+\usepackage{hyperref}
+\usepackage{cleveref}
+
+% To create random text use lipsum
+\usepackage{lipsum}
+
+% math package
+\usepackage{amsmath,amsfonts, amssymb}
+
+% units package
+\usepackage{siunitx}
+%array
+\usepackage{multirow}
+
+% acronym
+\usepackage{acro}
+
+% Include the following packages to use tikz
+\usepackage{tikz,xifthen}
+\usepackage{tikz-qtree}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}% drawing the background after the foreground
+\usetikzlibrary{shapes,arrows,shadows}
+\usetikzlibrary{calc,decorations.pathreplacing,decorations.markings,positioning}
+\usetikzlibrary{snakes,decorations.text,shapes,patterns}
+\usepackage{transparent}
+
+\usepackage[skins]{tcolorbox}
