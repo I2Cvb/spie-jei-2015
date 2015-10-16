@@ -252,7 +252,7 @@ In our simulation, $Q$ has been set to $0$ and the metal medium is considered as
 %\input{./Figure/Figure2/Fig2.tex}
 
 Furthermore, the black paint layer is considered as a dielectric material so that the energy provided by the interaction between the laser beam and material involves an absorption coefficient $\alpha$, near 1.
-Transient conduction analysis of $heat$ $transfer$ $module$ has been selected to solve heat equation. The 2D geometry of the problem is represented in Fig.\,\ref{subfig:2a} where $d$ is the defect depth, $D$ is the defect diameter. Boundary condition imposed to all surfaces is in form of the following equation:
+Transient conduction analysis of $heat$ $transfer$ $module$ has been selected to solve heat equation. The 2D geometry of the problem is represented in Fig.\,\ref{fig:2}a where $d$ is the defect depth, $D$ is the defect diameter. Boundary condition imposed to all surfaces is in form of the following equation:
 
 \begin{equation}
   \label{eq:33}
@@ -261,7 +261,7 @@ Transient conduction analysis of $heat$ $transfer$ $module$ has been selected to
 
 \noindent where $n$ is the normal vector, $\alpha$ the absorption coefficient, $q_0$ is the inward heat flux on top surface and is equal to 0 on other surfaces, $h$ is a coefficient representing heat transfer losses due to convective heat flux with surrounding atmosphere. $h$ is equal to \SI{5}{\watt \per \square \metre \per \kelvin} on all surfaces, except on the surfaces of the defect where it is equal to 0 to simulate thermal insulation. $T_{ext}$ is the surrounding atmosphere temperature and it is assumed that the radiation heat transfer losses are neglected. 
 
-For meshing, free tetrahedral meshes are selected with choice of a custom element size. The maximum element size is equal to \SI{0.032}{\milli \metre} with a maximum element growth rate equal to 1.35. The smallest element size is obtained near to the origin (0, 0, 0) centrally located on top of the surface (see Fig.\,\ref{subfig:2c}). A fine meshing is constructed with a number of elements ranging from $75,000$ to $225,000$ due to the presence of a \SI{0.1}{\milli \metre} layer on top of the simulated object surface. Furthermore, the system to solve consists of a number of degrees of freedom ranging from $111,000$ to $324,000$ and depends of the chosen geometry. Record time stepping is selected to \SI{0.1}{\second} in a range from \SI{0}{\second} to \SI{2}{\second}. Geometric Multigrid GMRES iterative linear solver is used. Backward Differentiation Formula (BDF) implicit method is used to help solver to converge.
+For meshing, free tetrahedral meshes are selected with choice of a custom element size. The maximum element size is equal to \SI{0.032}{\milli \metre} with a maximum element growth rate equal to 1.35. The smallest element size is obtained near to the origin (0, 0, 0) centrally located on top of the surface (see Fig.\,\ref{fig:2}c). A fine meshing is constructed with a number of elements ranging from $75,000$ to $225,000$ due to the presence of a \SI{0.1}{\milli \metre} layer on top of the simulated object surface. Furthermore, the system to solve consists of a number of degrees of freedom ranging from $111,000$ to $324,000$ and depends of the chosen geometry. Record time stepping is selected to \SI{0.1}{\second} in a range from \SI{0}{\second} to \SI{2}{\second}. Geometric Multigrid GMRES iterative linear solver is used. Backward Differentiation Formula (BDF) implicit method is used to help solver to converge.
 
 	%\input{./Figure/Figure3/Fig3.tex}
   
@@ -284,16 +284,16 @@ For meshing, free tetrahedral meshes are selected with choice of a custom elemen
 %\end{figure}
 
 
-The interaction of the laser beam with the solid surface produces a thermal wave propagating through the solid media. In the case of a media without any defects and assuming a semi-infinite and isotropic solid, the thermal response is defined by the shape of a symmetric hemisphere\cite{Li2011} as shown in Fig.\,\ref{subfig:2b}. This response is modified due to the presence of a defect close to the excited area.
+The interaction of the laser beam with the solid surface produces a thermal wave propagating through the solid media. In the case of a media without any defects and assuming a semi-infinite and isotropic solid, the thermal response is defined by the shape of a symmetric hemisphere\cite{Li2011} as shown in Fig.\,\ref{fig:2}b. This response is modified due to the presence of a defect close to the excited area.
 
-The simulation results are depicted in Fig.\,\ref{subfig:3a}-\ref{subfig:3b}-\ref{subfig:3c} by representing the temperature distribution in kelvin. It can be noted that the temperature intensity increases when the laser heats the defective area. Subsequently, the maximum temperature is reached for defects nearer to the surface. Fig.\,\ref{subfig:3d}-\ref{subfig:3e}-\ref{subfig:3f} represent the thermal response using another color-map. It can be observed that the amount of the thermal response increases due to the presence of inhomogeneities in the solid media.
+The simulation results are depicted in Fig.\,\ref{fig:3}a-\ref{fig:3}b-\ref{fig:3}c by representing the temperature distribution in kelvin. It can be noted that the temperature intensity increases when the laser heats the defective area. Subsequently, the maximum temperature is reached for defects nearer to the surface. Fig.\,\ref{fig:3}d-\ref{fig:3}e-\ref{fig:3}f represent the thermal response using another color-map. It can be observed that the amount of the thermal response increases due to the presence of inhomogeneities in the solid media.
 	
 \subsubsection{Defect detection algorithm}\label{subsec:312}
 % \graphicspath{{./Figure/Figure4/}}
 
 %\input{./Figure/Figure4/graph_detection_detect.tex}
 
-The object surface is punctually scanned using a laser beam and at each of these scans, a thermal image is acquired (see Fig.\,\ref{subfig:44c}).
+The object surface is punctually scanned using a laser beam and at each of these scans, a thermal image is acquired (see Fig.\,\ref{fig:44}c).
 Defect localization is characterized by a change of the heat distribution and therefore can be detected with an appropriate image processing algorithm in the thermal images.
 Our developed framework is depicted in Fig.\,\ref{fig:wkdetection} and can be subdivided into three stages: (i) pre-processing, (ii) segmentation, and (iii) detection.
 
@@ -416,11 +416,11 @@ The results are depicted in Fig.\,\ref{fig:6} by superimposing with a color map 
   %\label{fig:44}
 %\end{figure}
 
-Figure~\ref{subfig:6a} shows a steel plate with circular non-through defects, in which defects have a diameter of 9, 7, 5, and \SI{3}{\milli \metre}, from left to right. 
+Figure~\ref{fig:6}a shows a steel plate with circular non-through defects, in which defects have a diameter of 9, 7, 5, and \SI{3}{\milli \metre}, from left to right. 
 Each defect is positioned at a different depth 1, 2, 2.5, and \SI{3}{\milli \metre}, from bottom to top. 
 Only defects with depth less than or equal to \SI{2.5}{\milli \metre} are detected. 
-However, the defects with a diameter less than \SI{5}{\milli \metre} are not detected as shown in Fig.\,\ref{subfig:6b}.
-Besides, for the aluminum plate all defects are detected and the shape of the defect can be distinguished (see Fig.\,\ref{subfig:6d}). 
+However, the defects with a diameter less than \SI{5}{\milli \metre} are not detected as shown in Fig.\,\ref{fig:6}b.
+Besides, for the aluminum plate all defects are detected and the shape of the defect can be distinguished (see Fig.\,\ref{fig:6}d). 
 
 	%\input{Figure/Figure8/Fig8.tex}  
  
@@ -440,16 +440,16 @@ Besides, for the aluminum plate all defects are detected and the shape of the de
 %\end{figure}
 
 To study the repeatability of the technique, our framework is evaluated on steel plate with 16 identical circular defects located at \SI{1}{\milli \metre} depth and a \SI{10}{\milli \metre} diameter. 
-The result of this experiment is depicted in Fig.\,\ref{subfig:7b}, in which all defects are successfully detected.
+The result of this experiment is depicted in Fig.\,\ref{fig:7}b, in which all defects are successfully detected.
 
 
 	%\input{Figure/Figure9/Fig9.tex}  
 
 \subsection{Fusion of defect localization and 3D data}
 
-To assess the quality of the fusion between the defect localization and the 3D data, a steel object is scanned (see Fig.\,\ref{subfig:8a}) to acquire a set of thermal images.
+To assess the quality of the fusion between the defect localization and the 3D data, a steel object is scanned (see Fig.\,\ref{fig:8}a) to acquire a set of thermal images.
 The steel object contains non-through circular defects in the planar part with a depth of \SI{1}{\milli \metre}.
-The scanned area corresponds to the highlighted red delimitation depicted in Fig.\,\ref{subfig:8a}.
+The scanned area corresponds to the highlighted red delimitation depicted in Fig.\,\ref{fig:8}a.
 A similar method as proposed by Bajard~\emph{et al.}~\cite{Bajard2012} is used to obtain the 3D information and the defects are detected as in Sect.\,\ref{subsec:311}.
 The coordinate system is the same for the 3D and defects information due to the fact that these data are acquired with the same system.
 Therefore, the fusion between these data is straightforward, which overcome the matching problem faced by other methods as stated in the introduction section.
@@ -458,13 +458,13 @@ Therefore, the fusion between these data is straightforward, which overcome the 
 
 \subsection{Fiber orientations assessment}
 
-In this section, we evaluate our framework at detecting the fiber orientation of carbon fiber composite material (see Fig.\,\ref{subfig:9a}).
+In this section, we evaluate our framework at detecting the fiber orientation of carbon fiber composite material (see Fig.\,\ref{fig:9}a).
 The fiber orientation is estimated using the methodology presented in Sect.\,\ref{subsec:32}.
 The initial experimental setup is as follows: 
 firstly, the material is heated with the laser beam, the thermal radiation is recorded, and the orientation of the fiber is inferred. 
 Secondly, the experiment is repeated by rotating the carbon plate at a \SI{90}{\degree} position.
-The results of the ellipse fitting are depicted in Fig.\,\ref{subfig:9b}-\ref{subfig:9c}-\ref{subfig:9d}.
-The algebraic fitting qualitatively shows an accurate fitting as shown in Fig.\,\ref{subfig:9d}, in which the blue dots represents the raw data, the green curve is the fitted ellipse, and the red line represents the ellipse major axis orientation.
+The results of the ellipse fitting are depicted in Fig.\,\ref{fig:9}b-\ref{fig:9}c-\ref{fig:9}d.
+The algebraic fitting qualitatively shows an accurate fitting as shown in Fig.\,\ref{fig:9}d, in which the blue dots represents the raw data, the green curve is the fitted ellipse, and the red line represents the ellipse major axis orientation.
 As expected, the ellipse orientation follows the material rotation as depicted Fig.\,\ref{fig:10}.
 
 
