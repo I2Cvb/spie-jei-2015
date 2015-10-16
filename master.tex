@@ -99,6 +99,8 @@
 \usepackage{transparent}
 
 \usepackage[skins]{tcolorbox}
+\usepackage{standalone}
+\usepackage{import}
 
 %% Acronym definition example using glossaries package
 %% \usepackage{acro} is required
@@ -557,18 +559,76 @@ Since September 2005, he has been an Assistant Professor with the Laboratory Le2
 \newpage
 \listoftables
 
-\newpage \input{Fig1.tex}  
-\newpage \input{Fig2.tex}  
-\newpage \input{Fig3.tex}  
-\newpage \input{graph_detection_detect.tex}  
-\newpage \input{graph_fiber.tex}  
-\newpage \input{Fig6.tex}  
-\newpage \input{Fig7.tex}  
-\newpage \input{Fig8.tex}  
-\newpage \input{Fig9.tex}  
-\newpage \input{Fig10.tex} 
-\newpage \input{Fig11.tex}  
-\newpage \input{Fig12.tex}  
+\newpage \begin{figure}\centering\includegraphics{Fig1}  
+
+	  \caption{Examples of 3D digitization obtained by \acs*{sfh} approach: (a), (b), (c) and (d) metallic specular surfaces \cite{bajard2013numerisation} - (e) and (f) black plastic - (g) and (h) composite material - (i) and (j) ceramic - (k) and (l) glass transparent object \cite{meriaudeau20113d}.}
+  \label{fig:1}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig2}  
+		\caption{(a) Cross-sectional view of the geometry - (b) 3D Thermal response to a laser 
+	excitation - (c) Geometry and meshing (front side), dimensions appears in cm  - (d) 
+	Geometry and meshing (back side).}
+  \label{fig:2}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig3}  
+	  \caption{(a) and (d) Thermal response, observed on a non-defective area - (b) and (e) 
+	Thermal response, observed on an area with defect of 1 mm below surface - (c) and (f) 
+	Thermal response, 
+	observed on an area with defect of 0.5 mm below surface.}
+	
+  \label{fig:3}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{graph_detection_detect}  
+  \caption{Image processing work-flow to detect non-through defects.}
+  \label{fig:wkdetection}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{graph_fiber}  
+	\caption{Image processing work-flow to infer the fiber orientation.}
+  \label{fig:wkfiber}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig6}  
+	\caption{Scanner prototype.}
+  \label{fig:4}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig7}  
+  \caption{(a) Front side of the inspected material - (b) Back side of the inspected
+    material - (c) Form of the thermal response of the material in the area with and without
+  defect.}
+  \label{fig:44}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig8}  
+  \caption{(a) and (c) Steel and aluminum objects - (b) and (d) Corresponding detection map.}
+  \label{fig:6}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig9}  
+  \caption{(a) Steel objects - (b) Corresponding detection map.}
+  \label{fig:7}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig10} 
+  \caption{(a) The specimen - (b) 3D mesh - (c) Corresponding detection map - (d) 3D mapping.}
+  \label{fig:8}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig11}  
+  \caption{(a) The specimen - (b) Segmented thermal response - (c) Edge of the thermal
+  response - (d) Ellipse fitting.}
+  \label{fig:9}
+\end{figure}
+
+\newpage \begin{figure}\centering\includegraphics{Fig12}  
+  \caption{Example of fiber orientation detection: (a)-(b) horizontally oriented - (c)-(d)
+  vertically oriented.}
+  \label{fig:10}
+\end{figure}
 
 
 \end{spacing}

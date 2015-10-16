@@ -1,8 +1,20 @@
+\documentclass[tikz]{standalone}
 
-\begin{figure}
-  \centering
+\usepackage[]{graphicx}
+\usepackage{subfigure}
 
+% Include the following packages to use tikz
+\usepackage{tikz,xifthen}
+\usepackage{tikz-qtree}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}% drawing the background after the foreground
+\usetikzlibrary{shapes,arrows,shadows}
+\usetikzlibrary{calc,decorations.pathreplacing,decorations.markings,positioning}
+\usetikzlibrary{snakes,decorations.text,shapes,patterns}
+\usepackage{transparent}
 
+\begin{document}
 
   % Define the properties of the different blocks
   \tikzstyle{module}=[draw, draw=blue!80, text width=10em, 
@@ -73,48 +85,48 @@
 
     \draw[->] (mer)--(bin);
 
-    \begin{scope}[yshift=-170,xshift=950]
+    \begin{scope}[yshift=-170,xshift=880]
       \transparent{1.0}\draw[path image=defect.png] (0,0) rectangle (1.0,1.0);
       \path (0,0)+(0.5,1.6) node {\Large Det. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-132,xshift=594]
+    \begin{scope}[yshift=-132,xshift=544]
       \transparent{0.6}\draw[path image=rg.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-136,xshift=600]
+    \begin{scope}[yshift=-136,xshift=550]
       \transparent{0.6}\draw[path image=rg.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-140,xshift=606]
+    \begin{scope}[yshift=-140,xshift=556]
       \transparent{0.8}\draw[path image=rg.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Seg. Img.};
+      \path (0,0)+(0.2,1.8) node {\Large Seg. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-132,xshift=270]
+    \begin{scope}[yshift=-132,xshift=250]
       \transparent{0.6}\draw[path image=th_im.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-136,xshift=276]
+    \begin{scope}[yshift=-136,xshift=256]
       \transparent{0.6}\draw[path image=th_im.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-140,xshift=282]
+    \begin{scope}[yshift=-140,xshift=262]
       \transparent{0.8}\draw[path image=th_im.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Enh. Img.};
+      \path (0,0)+(0.2,1.8) node {\Large Enh. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-166,xshift=-82]
+    \begin{scope}[yshift=-166,xshift=-72]
       \transparent{0.6}\draw[path image=th_im_2.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-172,xshift=-76]
+    \begin{scope}[yshift=-172,xshift=-66]
       \transparent{0.6}\draw[path image=th_im_2.png] (0,0) rectangle (1.0,1.0);
     \end{scope}
 
-    \begin{scope}[yshift=-176,xshift=-70]
+    \begin{scope}[yshift=-176,xshift=-60]
       \transparent{0.8}\draw[path image=th_im_2.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Thermal Image};
+      \path (0,0)+(0.2,1.8) node {\Large Thermal Image};
     \end{scope}
 
     \path (seg.west |- seg.north)+(-2.5,-1) node (i) {};
@@ -137,6 +149,6 @@
 
 
 
-  \caption{Image processing work-flow to detect non-through defects.}
-  \label{fig:wkdetection}
-\end{figure}
+  % \caption{Image processing work-flow to detect non-through defects.}
+  % \label{fig:wkdetection}
+\end{document}

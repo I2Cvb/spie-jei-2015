@@ -1,5 +1,23 @@
+\documentclass[tikz]{standalone}
 
-\begin{figure}
+\usepackage[]{graphicx}
+\usepackage{subfigure}
+
+
+% Include the following packages to use tikz
+\usepackage{tikz,xifthen}
+\usepackage{tikz-qtree}
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}% drawing the background after the foreground
+\usetikzlibrary{shapes,arrows,shadows}
+\usetikzlibrary{calc,decorations.pathreplacing,decorations.markings,positioning}
+\usetikzlibrary{snakes,decorations.text,shapes,patterns}
+\usepackage{transparent}
+
+
+\begin{document}
+
   \centering
 	
   % Define the properties of the different blocks
@@ -36,7 +54,7 @@
       
       \path[fill=blue!10,rounded corners, draw=blue!20, dashed] (a) rectangle (b);
     \end{pgfonlayer}
-    \path (pre.north) +(0,+\blockdist) node (bgreg) {\Large Pre-processing};
+    \path (seg.north) +(0,+\blockdist) node (bgreg) {\Large Pre-processing};
 
     % Second block with the segmentation
     \begin{scope}[node distance=3cm]
@@ -72,24 +90,24 @@
 
     \path (mer.north) +(0,+\blockdist) node (bgreg) {\Large Fitting};
 
-    \begin{scope}[yshift=-85,xshift=950]
+    \begin{scope}[yshift=-85,xshift=882]
       \transparent{1.0}\draw[path image=fig9d.png] (0,0) rectangle (1.0,1.0);
       \path (0,0)+(0.5,1.6) node {\Large Det. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-60,xshift=606]
+    \begin{scope}[yshift=-60,xshift=552]
       \transparent{1.0}\draw[path image=fig9c.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Seg. Img.};
+      \path (0,0)+(0.5,1.8) node {\Large Seg. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-60,xshift=282]
+    \begin{scope}[yshift=-60,xshift=258]
       \transparent{1.0}\draw[path image=th_im.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Enh. Img.};
+      \path (0,0)+(0.5,1.8) node {\Large Enh. Img.};
     \end{scope}
 
-    \begin{scope}[yshift=-85),xshift=-70]
+    \begin{scope}[yshift=-85,xshift=-50]
       \transparent{1.0}\draw[path image=th_im_2.png] (0,0) rectangle (1.0,1.0);
-      \path (0,0)+(0.0,1.8) node {\Large Thermal Image};
+      \path (0,0)+(0.5,1.8) node {\Large Thermal Image};
     \end{scope}
 
     \path (seg.west |- seg.north)+(-2.5,-1) node (i) {};
@@ -111,11 +129,11 @@
   \end{tikzpicture}
 
   
-	\caption{Image processing work-flow to infer the fiber orientation.}
-  \label{fig:wkfiber}
-\end{figure}
+	% \caption{Image processing work-flow to infer the fiber orientation.}
+  % \label{fig:wkfiber}
 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../../../master"
 %%% End:
+\end{document}
